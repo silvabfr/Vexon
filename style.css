@@ -471,7 +471,7 @@ button {
     width: 190px;
     height: 45px;
 
-    left: 35px;
+    left: 50%;
     bottom: 40px;
 
     border-radius: 7px;
@@ -485,7 +485,7 @@ button {
 
     border: 1px solid #30303a;
 
-    transform: skewX(-12deg);
+    transform: translateX(-50%) skewX(-12deg);
 }
 
 .setup-mouse {
@@ -1203,6 +1203,11 @@ button {
         grid-template-columns: minmax(0, 1fr);
 
         text-align: center;
+    }
+
+    .hero-text,
+    .hero-visual {
+        min-width: 0;
     }
 
     .hero-text > p {
