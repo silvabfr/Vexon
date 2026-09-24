@@ -2445,8 +2445,36 @@ button {
     }
 
     .hero h1 {
-        font-size: 42px;
-        letter-spacing: -2px;
+        font-size: 38px;
+        line-height: 1.05;
+        letter-spacing: -1px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
+
+    .about-grid h2 {
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
+
+    .promo h2 {
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .product-detail-info h1 {
+        letter-spacing: -1px;
+        line-height: 1.1;
     }
 
     .hero-tag {
