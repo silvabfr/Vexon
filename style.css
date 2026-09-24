@@ -2428,3 +2428,101 @@ button {
 .favorite.is-active {
     color: var(--purple-light);
 }
+
+/* =========================================
+   RESPONSIVIDADE — AJUSTES FINOS
+   (telas pequenas: ~375px e ~320px)
+========================================= */
+
+@media (max-width: 480px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .page-header {
+        padding: 60px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+    }
+
+    .btn {
+        padding: 0 18px;
+        font-size: 12px;
+    }
+
+    .category-grid,
+    .category-grid-large {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .category-card {
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    .product-detail-info h1 {
+        font-size: 30px;
+    }
+
+    .detail-price {
+        font-size: 24px;
+    }
+
+    .cart-item {
+        grid-template-columns: 60px 1fr;
+
+        gap: 12px;
+
+        padding: 12px;
+    }
+
+    .cart-product-image {
+        width: 60px;
+        height: 60px;
+
+        font-size: 30px;
+    }
+
+    .auth-card {
+        padding: 20px 16px;
+    }
+
+    .contact-form-card,
+    .contact-form {
+        padding: 20px;
+    }
+
+}
+
+/* Garante que nada force rolagem horizontal na página inteira */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Área de toque confortável em botões pequenos no celular */
+@media (max-width: 600px) {
+
+    .icon-button,
+    .cart-button,
+    .favorite {
+        width: 44px;
+        height: 44px;
+    }
+
+    .quantity button {
+        width: 44px;
+        height: 44px;
+    }
+
+}
