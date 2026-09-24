@@ -1221,10 +1221,12 @@ button {
 
     .hero-visual {
         min-height: 350px;
+        width: 100%;
     }
 
     .setup-card {
         transform: scale(0.8);
+        margin: 0 auto;
     }
 
     .promo-content {
@@ -1272,6 +1274,7 @@ button {
 
     .setup-card {
         transform: scale(0.6);
+        margin: 0 auto;
     }
 
     .category-grid {
