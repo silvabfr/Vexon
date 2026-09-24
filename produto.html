@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Produto | VEXON</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+    <script
+        src="js/utils.js"
+        defer
+    ></script>
+
+    <script
+        src="js/produtos.js"
+        defer
+    ></script>
+
+    <script
+        src="js/layout.js"
+        defer
+    ></script>
+
+    <script
+        src="js/carrinho.js"
+        defer
+    ></script>
+
+    <script
+        src="js/auth.js"
+        defer
+    ></script>
+
+    <script
+        src="js/checkout.js"
+        defer
+    ></script>
+
+    <script
+        src="js/produto.js"
+        defer
+    ></script>
+
+</head>
+
+<body>
+
+
+    <main>
+
+        <section class="section product-detail">
+
+            <div class="container">
+
+                <div class="product-detail-grid">
+
+
+                    <!-- IMAGEM -->
+
+                    <div class="product-detail-image">
+
+                        <span class="product-badge">
+                            NOVO
+                        </span>
+
+                        <div
+                            class="detail-product-placeholder"
+                            id="product-emoji"
+                        >
+                            🛍️
+                        </div>
+
+                    </div>
+
+
+                    <!-- INFORMAÇÕES -->
+
+                    <div class="product-detail-info">
+
+
+                        <span
+                            class="product-category"
+                            id="product-category"
+                        >
+                            PRODUTO
+                        </span>
+
+
+                        <h1 id="product-name">
+                            Carregando produto...
+                        </h1>
+
+
+                        <p class="rating">
+
+                            ★★★★★
+
+                            <span>
+                                128 avaliações
+                            </span>
+
+                        </p>
+
+
+                        <p
+                            class="detail-description"
+                            id="product-description"
+                        >
+                            Carregando descrição...
+                        </p>
+
+
+                        <!-- PREÇO -->
+
+                        <div
+                            class="detail-price"
+                            id="product-price"
+                        >
+                            R$ 0,00
+                        </div>
+
+
+                        <!-- ESTOQUE -->
+
+                        <div class="stock">
+                            ● Em estoque
+                        </div>
+
+
+                        <!-- QUANTIDADE -->
+
+                        <div class="quantity">
+
+                            <button
+                                type="button"
+                                id="quantity-minus"
+                            >
+                                −
+                            </button>
+
+
+                            <span id="quantity-value">
+                                1
+                            </span>
+
+
+                            <button
+                                type="button"
+                                id="quantity-plus"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+
+                        <!-- CARRINHO -->
+
+                        <button
+                            type="button"
+                            class="btn btn-primary add-cart"
+                        >
+                            🛒 Adicionar ao carrinho
+                        </button>
+
+
+                        <!-- COMPRAR AGORA -->
+
+                        <a
+                            href="carrinho.html"
+                            class="btn btn-secondary"
+                        >
+                            Comprar agora
+                        </a>
+
+
+                        <!-- ESPECIFICAÇÕES -->
+
+                        <div class="product-specs">
+
+
+                            <div>
+
+                                <strong>
+                                    Categoria
+                                </strong>
+
+                                <span id="spec-category">
+                                    -
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Produto
+                                </strong>
+
+                                <span id="spec-name">
+                                    -
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Código
+                                </strong>
+
+                                <span id="spec-id">
+                                    -
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Disponibilidade
+                                </strong>
+
+                                <span>
+                                    Em estoque
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELACIONADOS -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            TALVEZ VOCÊ GOSTE
+                        </span>
+
+                        <h2>
+                            Outros produtos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product-grid"
+                    id="related-products"
+                >
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

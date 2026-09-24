@@ -1,0 +1,115 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | VEXON</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/utils.js" defer></script>
+    <script src="js/produtos.js" defer></script>
+    <script src="js/layout.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+</head>
+<body>
+
+
+
+<main>
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">VEXON</span>
+        <h1>Finalizar compra</h1>
+        <p>Confira seus dados e finalize seu pedido.</p>
+    </div>
+</section>
+
+<section class="section">
+<div class="container checkout-layout">
+
+<div class="card checkout-card">
+    <h2>Dados de entrega</h2>
+
+    <form id="checkout-form">
+
+        <div class="form-group">
+            <label for="checkout-name">Nome completo</label>
+            <input id="checkout-name" type="text" required placeholder="Seu nome">
+        </div>
+
+        <div class="form-group">
+            <label for="checkout-email">E-mail</label>
+            <input id="checkout-email" type="email" required placeholder="seu@email.com">
+        </div>
+
+        <div class="form-group">
+            <label for="checkout-address">Endereço</label>
+            <input id="checkout-address" type="text" required placeholder="Rua, número e complemento">
+        </div>
+
+        <div class="checkout-two-columns">
+            <div class="form-group">
+                <label for="checkout-city">Cidade</label>
+                <input id="checkout-city" type="text" required placeholder="Cidade">
+            </div>
+
+            <div class="form-group">
+                <label for="checkout-cep">CEP</label>
+                <input id="checkout-cep" type="text" required placeholder="00000-000">
+            </div>
+        </div>
+
+        <h2 class="checkout-subtitle">Pagamento</h2>
+
+        <div class="form-group">
+            <label for="checkout-payment">Forma de pagamento</label>
+            <select id="checkout-payment" required>
+                <option value="">Selecione</option>
+                <option value="pix">PIX</option>
+                <option value="cartao">Cartão</option>
+                <option value="boleto">Boleto</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary checkout-button">
+            Finalizar pedido
+        </button>
+
+    </form>
+</div>
+
+<aside class="card checkout-summary">
+    <h2>Resumo do pedido</h2>
+
+    <div id="checkout-items"></div>
+
+    <hr>
+
+    <div class="summary-line">
+        <span>Subtotal</span>
+        <strong id="checkout-subtotal">R$ 0,00</strong>
+    </div>
+
+    <div class="summary-line">
+        <span>Frete</span>
+        <strong id="checkout-shipping">R$ 0,00</strong>
+    </div>
+
+    <div class="summary-line checkout-total">
+        <span>Total</span>
+        <strong id="checkout-total">R$ 0,00</strong>
+    </div>
+</aside>
+
+</div>
+</section>
+</main>
+
+
+
+
+
+</body>
+</html>

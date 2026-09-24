@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha | VEXON</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/utils.js" defer></script>
+    <script src="js/produtos.js" defer></script>
+    <script src="js/layout.js" defer></script>
+    <script src="js/carrinho.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+</head>
+
+<body class="auth-body">
+
+<main class="auth-container">
+
+    <a href="index.html" class="logo auth-logo">
+        VEXON<span>.</span>
+    </a>
+
+    <div class="auth-card">
+
+        <span class="section-label">SEGURANÇA</span>
+
+        <h1>Recuperar senha</h1>
+
+        <p>Informe seu e-mail para iniciar a recuperação da conta.</p>
+
+        <form id="recover-form">
+
+            <label for="recover-email">E-mail</label>
+            <input
+                id="recover-email"
+                type="email"
+                placeholder="seu@email.com"
+                required
+            >
+
+            <button type="submit" class="btn btn-primary auth-button">
+                Continuar
+            </button>
+
+        </form>
+
+        <div class="auth-divider">
+            <span>ou</span>
+        </div>
+
+        <p class="auth-register">
+            Lembrou da senha?
+            <a href="login.html">Voltar para o login</a>
+        </p>
+
+    </div>
+
+</main>
+
+</body>
+</html>
