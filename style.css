@@ -5,7 +5,10 @@
    Seu setup, seu nível.
 ========================================= */
 
-/* RESET */
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +37,17 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
+    max-width: 100%;
+    overflow-x: hidden;
+
     background: var(--bg);
     color: var(--text);
+
     font-family: "Inter", sans-serif;
     line-height: 1.6;
 }
@@ -49,7 +58,9 @@ a {
 }
 
 button,
-input {
+input,
+select,
+textarea {
     font-family: inherit;
 }
 
@@ -65,6 +76,7 @@ button {
 .section {
     padding: 100px 0;
 }
+
 
 /* =========================================
    TOP BAR
@@ -85,6 +97,7 @@ button {
     font-weight: 600;
     letter-spacing: 0.3px;
 }
+
 
 /* =========================================
    HEADER
@@ -209,6 +222,7 @@ button {
     font-weight: 800;
 }
 
+
 /* =========================================
    HERO
 ========================================= */
@@ -248,6 +262,8 @@ button {
 }
 
 .hero-content {
+    width: 100%;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -352,11 +368,13 @@ button {
     border-color: rgba(139, 92, 246, 0.5);
 }
 
+
 /* =========================================
    HERO VISUAL
 ========================================= */
 
 .hero-visual {
+    width: 100%;
     min-height: 430px;
 
     display: grid;
@@ -385,7 +403,10 @@ button {
 
     position: relative;
 
+    flex-shrink: 0;
+
     transform: perspective(800px) rotateX(8deg) rotateY(-8deg);
+    transform-origin: center center;
 
     border-radius: 20px;
 
@@ -504,6 +525,7 @@ button {
     border: 1px solid #34343e;
 }
 
+
 /* =========================================
    SECTION HEADING
 ========================================= */
@@ -546,6 +568,7 @@ button {
 .see-all:hover {
     color: white;
 }
+
 
 /* =========================================
    CATEGORIES
@@ -610,6 +633,7 @@ button {
     color: var(--muted);
     font-size: 11px;
 }
+
 
 /* =========================================
    PRODUCTS
@@ -728,6 +752,10 @@ button {
     border-color: rgba(244, 63, 94, 0.4);
 }
 
+.favorite.is-active {
+    color: var(--purple-light);
+}
+
 .product-info {
     padding: 20px;
 }
@@ -799,6 +827,7 @@ button {
     background: var(--purple);
 }
 
+
 /* =========================================
    PROMO
 ========================================= */
@@ -856,6 +885,8 @@ button {
     place-items: center;
 
     position: relative;
+
+    flex-shrink: 0;
 
     transform: rotate(-8deg);
 
@@ -925,6 +956,7 @@ button {
     -webkit-background-clip: text;
 }
 
+
 /* =========================================
    BENEFITS
 ========================================= */
@@ -970,6 +1002,7 @@ button {
     color: var(--muted);
     font-size: 10px;
 }
+
 
 /* =========================================
    NEWSLETTER
@@ -1061,6 +1094,7 @@ button {
     background: var(--purple-light);
     color: white;
 }
+
 
 /* =========================================
    FOOTER
@@ -1157,182 +1191,14 @@ button {
     font-size: 10px;
 }
 
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
 
-@media (max-width: 1050px) {
-
-    .nav {
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 11px;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 800px) {
-
-    .header-content {
-        min-height: 68px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .hero {
-        padding: 70px 0;
-    }
-
-    .hero-content {
-        grid-template-columns: minmax(0, 1fr);
-
-        text-align: center;
-    }
-
-    .hero-text,
-    .hero-visual {
-        min-width: 0;
-    }
-
-    .hero-text > p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        min-height: 350px;
-        width: 100%;
-    }
-
-    .setup-card {
-        transform: scale(0.8);
-        margin: 0 auto;
-    }
-
-    .promo-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .newsletter-content {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .newsletter-content > div {
-        text-align: center;
-    }
-
-    .newsletter p {
-        margin: auto;
-    }
-
-    .newsletter-form {
-        margin: auto;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 550px) {
-
-    .section {
-        padding: 70px 0;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-        letter-spacing: -3px;
-    }
-
-    .hero-visual {
-        min-height: 260px;
-    }
-
-    .setup-card {
-        transform: scale(0.6);
-        margin: 0 auto;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .category-card {
-        min-height: 140px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-image {
-        height: 300px;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .promo-decoration {
-        width: 280px;
-        height: 180px;
-    }
-
-    .promo-decoration span {
-        font-size: 32px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-        gap: 5px;
-        padding: 5px;
-    }
-
-    .newsletter-form input {
-        min-height: 42px;
-    }
-
-}
 /* =========================================
    PÁGINAS INTERNAS
 ========================================= */
 
 .page-header {
     padding: 100px 0 70px;
+
     background:
         radial-gradient(
             circle at 70% 50%,
@@ -1754,6 +1620,16 @@ button {
     font-size: 11px;
 }
 
+.remove-product {
+    border: 0;
+    background: none;
+
+    color: #888;
+
+    cursor: pointer;
+    font-size: 16px;
+}
+
 
 /* =========================================
    SOBRE
@@ -1792,9 +1668,15 @@ button {
 .contact-grid {
     display: grid;
 
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 80px;
+    gap: 40px;
+
+    align-items: start;
+}
+
+.contact-info {
+    height: fit-content;
 }
 
 .contact-info h2 {
@@ -1845,59 +1727,121 @@ button {
     font-size: 11px;
 }
 
-.contact-form {
+
+/* =========================================
+   FORMULÁRIO DE CONTATO
+========================================= */
+
+.contact-form-card {
+    height: fit-content;
+
+    padding: 25px;
+
+    margin: 0;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.contact-form-card h2 {
+    margin: 0 0 20px;
+}
+
+.contact-form-card form {
+    margin: 0;
+    padding: 0;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
 
     gap: 8px;
 
-    padding: 30px;
-
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    background: var(--card);
+    margin: 0 0 14px;
+    padding: 0;
 }
 
-.contact-form label {
-    margin-top: 8px;
+.form-group:last-of-type {
+    margin-bottom: 16px;
+}
 
-    font-size: 11px;
+.form-group label {
+    display: block;
+
+    margin: 0 0 6px;
+
+    font-size: 13px;
     font-weight: 600;
+
+    color: var(--text);
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+
     width: 100%;
 
-    padding: 13px;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    margin: 0;
+
+    background: #101014;
+    color: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
 
     outline: none;
 
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
 
-    background: #0b0b0f;
-    color: white;
-
-    font-size: 12px;
+    transition: 0.2s ease;
 }
 
-.contact-form textarea {
-    resize: vertical;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     border-color: var(--purple);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.12);
 }
 
-.contact-form button {
-    margin-top: 15px;
+.form-group textarea {
+    resize: vertical;
 
-    border: 0;
+    min-height: 110px;
+    max-height: 180px;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #101014;
+    color: #fff;
+}
+
+.contact-form-card .btn {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
 }
 
 
@@ -1995,7 +1939,6 @@ button {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     margin: 8px 0 15px;
@@ -2063,7 +2006,87 @@ button {
 
 
 /* =========================================
-   RESPONSIVIDADE DAS NOVAS PÁGINAS
+   MENSAGENS / ESTADOS VAZIOS
+========================================= */
+
+.vexon-message {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 99999;
+
+    max-width: 350px;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 10px;
+
+    background: #15151b;
+    color: white;
+
+    font-size: 13px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.empty-cart,
+.empty-state {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    background: var(--card);
+}
+
+.empty-cart-icon {
+    font-size: 60px;
+}
+
+.empty-cart p,
+.empty-state p {
+    color: var(--muted);
+
+    margin: 15px 0 25px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 11px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 900px) {
@@ -2093,7 +2116,126 @@ button {
 
 }
 
+
+/* =========================================
+   MOBILE HERO
+   CORREÇÃO PRINCIPAL DO CARD
+========================================= */
+
+@media (max-width: 800px) {
+
+    .header-content {
+        min-height: 68px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-visual {
+        min-width: 0;
+    }
+
+    .hero-text > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /*
+       IMPORTANTE:
+       o visual agora é flex e centraliza
+       o card pelo próprio eixo horizontal.
+    */
+
+    .hero-visual {
+        width: 100%;
+        min-height: 350px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        overflow: visible;
+    }
+
+    .setup-card {
+        width: 430px;
+        height: 300px;
+
+        position: relative;
+
+        flex-shrink: 0;
+
+        margin: 0;
+
+        /*
+           Mantém a perspectiva original.
+           Não usamos scale aqui.
+        */
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg);
+
+        transform-origin: center center;
+    }
+
+    .promo-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newsletter-content > div {
+        text-align: center;
+    }
+
+    .newsletter p {
+        margin: auto;
+    }
+
+    .newsletter-form {
+        margin: auto;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE MÉDIO
+========================================= */
+
 @media (max-width: 600px) {
+
+    .section {
+        padding: 70px 0;
+    }
 
     .page-header {
         padding: 70px 0 50px;
@@ -2133,313 +2275,109 @@ button {
         font-size: 110px;
     }
 
-    .contact-form,
-    .auth-card {
-        padding: 25px 20px;
+    .contact-form-card,
+    .contact-form {
+        padding: 20px;
+    }
+
+    .icon-button,
+    .cart-button,
+    .favorite {
+        width: 44px;
+        height: 44px;
+    }
+
+    .quantity button {
+        width: 44px;
+        height: 44px;
     }
 
 }
+
+
 /* =========================================
-   FORMULÁRIO DE CONTATO
+   MOBILE PEQUENO
 ========================================= */
 
-.contact-form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 35px;
-}
+@media (max-width: 550px) {
 
-.contact-form-card h2 {
-    margin-bottom: 25px;
-}
+    .hero-visual {
+        width: 100%;
+        min-height: 300px;
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
+        display: flex;
 
-.form-group label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-}
+        align-items: center;
+        justify-content: center;
+    }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
+    /*
+       O card continua com 430px internamente,
+       mas é reduzido visualmente mantendo o
+       centro exato do elemento.
+    */
 
-    background: #101014;
-    color: #fff;
+    .setup-card {
+        width: 430px;
+        height: 300px;
 
-    border: 1px solid var(--border);
-    border-radius: 10px;
+        margin: 0;
 
-    outline: none;
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg)
+            scale(0.6);
 
-    font-family: inherit;
-    font-size: 14px;
+        transform-origin: center center;
+    }
 
-    transition: 0.2s ease;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #8b5cf6;
-
-    box-shadow:
-        0 0 0 3px rgba(139, 92, 246, 0.12);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.form-group select {
-    cursor: pointer;
-}
-
-.form-group select option {
-    background: #101014;
-    color: #fff;
-}
-
-.contact-form-card .btn {
-    width: 100%;
-    margin-top: 5px;
-}
-    /* =========================================
-   FORMULÁRIO DE CONTATO
-========================================= */
-
-.contact-form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 35px;
-}
-
-.contact-form-card h2 {
-    margin-bottom: 25px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-
-    background: #101014;
-    color: #fff;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    outline: none;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    transition: 0.2s ease;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #8b5cf6;
-
-    box-shadow:
-        0 0 0 3px rgba(139, 92, 246, 0.12);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.form-group select {
-    cursor: pointer;
-}
-
-.form-group select option {
-    background: #101014;
-    color: #fff;
-}
-
-.contact-form-card .btn {
-    width: 100%;
-    margin-top: 5px;
-}
-/* =========================================
-   CORREÇÃO - PÁGINA DE CONTATO
-========================================= */
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.contact-info,
-.contact-form-card {
-    height: fit-content;
-}
-
-.contact-form-card {
-    padding: 25px;
-    margin: 0;
-}
-
-.contact-form-card .section-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.contact-form-card h2 {
-    margin: 0 0 20px 0;
-}
-
-.contact-form-card form {
-    margin: 0;
-    padding: 0;
-}
-
-.form-group {
-    margin: 0 0 14px 0;
-    padding: 0;
-}
-
-.form-group:last-of-type {
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    display: block;
-    margin: 0 0 6px 0;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.form-group textarea {
-    min-height: 110px;
-    max-height: 180px;
-}
-
-.contact-form-card .btn {
-    display: block;
-    width: 100%;
-    margin: 0;
-}
-
-
-/* Remove espaços exagerados da seção */
-
-.contact-grid + * {
-    margin-top: 0;
-}
-
-
-/* Celular */
-
-@media (max-width: 768px) {
-
-    .contact-grid {
+    .product-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+    }
+
+    .product-image {
+        height: 300px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-decoration {
+        width: 280px;
+        height: 180px;
+    }
+
+    .promo-decoration span {
+        font-size: 32px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .newsletter-form input {
+        min-height: 42px;
     }
 
 }
-    
-/* =========================================
-   MENSAGEM / ESTADOS VAZIOS
-========================================= */
 
-.vexon-message {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 99999;
-    max-width: 350px;
-    padding: 15px 20px;
-    border: 1px solid rgba(139, 92, 246, 0.5);
-    border-radius: 10px;
-    background: #15151b;
-    color: white;
-    font-size: 13px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-}
-
-.empty-cart,
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    background: var(--card);
-}
-
-.empty-cart-icon {
-    font-size: 60px;
-}
-
-.empty-cart p,
-.empty-state p {
-    color: var(--muted);
-    margin: 15px 0 25px;
-}
-
-.remove-product {
-    border: 0;
-    background: none;
-    color: #888;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.favorite.is-active {
-    color: var(--purple-light);
-}
 
 /* =========================================
-   RESPONSIVIDADE — AJUSTES FINOS
-   (telas pequenas: ~375px e ~320px)
+   MOBILE MUITO PEQUENO
 ========================================= */
 
 @media (max-width: 480px) {
@@ -2454,25 +2392,33 @@ button {
 
     .hero h1 {
         font-size: 38px;
+
         line-height: 1.05;
+
         letter-spacing: -1px;
     }
 
     .page-header h1 {
         font-size: 32px;
+
         line-height: 1.1;
+
         letter-spacing: -1px;
     }
 
     .about-grid h2 {
         font-size: 32px;
+
         line-height: 1.1;
+
         letter-spacing: -1px;
     }
 
     .promo h2 {
         font-size: 26px;
+
         line-height: 1.15;
+
         letter-spacing: -1px;
     }
 
@@ -2481,7 +2427,10 @@ button {
     }
 
     .product-detail-info h1 {
+        font-size: 30px;
+
         letter-spacing: -1px;
+
         line-height: 1.1;
     }
 
@@ -2491,22 +2440,21 @@ button {
 
     .btn {
         padding: 0 18px;
+
         font-size: 12px;
     }
 
     .category-grid,
     .category-grid-large {
         grid-template-columns: 1fr 1fr;
+
         gap: 10px;
     }
 
     .category-card {
         min-height: 120px;
-        padding: 15px;
-    }
 
-    .product-detail-info h1 {
-        font-size: 30px;
+        padding: 15px;
     }
 
     .detail-price {
@@ -2539,26 +2487,39 @@ button {
 
 }
 
-/* Garante que nada force rolagem horizontal na página inteira */
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
-/* Área de toque confortável em botões pequenos no celular */
-@media (max-width: 600px) {
+/* =========================================
+   MOBILE EXTREMO
+========================================= */
 
-    .icon-button,
-    .cart-button,
-    .favorite {
-        width: 44px;
-        height: 44px;
+@media (max-width: 360px) {
+
+    .hero {
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    .quantity button {
-        width: 44px;
-        height: 44px;
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    .setup-card {
+        /*
+           Pequena redução adicional para
+           aparelhos muito estreitos.
+        */
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg)
+            scale(0.52);
+
+        transform-origin: center center;
     }
 
 }
+
+
+/* =========================================
+   FIM
+========================================= */
