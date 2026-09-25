@@ -5,15 +5,27 @@
    Seu setup, seu nível.
 ========================================= */
 
-
-/* =========================================
-   RESET
-========================================= */
-
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #07070a;
+    color: #f3f3f5;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 :root {
@@ -36,23 +48,6 @@
     --radius: 16px;
 }
 
-html {
-    scroll-behavior: smooth;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-
-    background: var(--bg);
-    color: var(--text);
-
-    font-family: "Inter", sans-serif;
-    line-height: 1.6;
-}
-
 a {
     color: inherit;
     text-decoration: none;
@@ -66,11 +61,6 @@ input {
 button {
     cursor: pointer;
 }
-
-
-/* =========================================
-   CONTAINER
-========================================= */
 
 .container {
     width: min(92%, var(--container));
@@ -95,7 +85,6 @@ button {
     );
 
     text-align: center;
-
     padding: 9px 15px;
 
     font-size: 12px;
@@ -114,7 +103,6 @@ button {
     z-index: 100;
 
     background: rgba(7, 7, 10, 0.88);
-
     backdrop-filter: blur(18px);
 
     border-bottom: 1px solid var(--border);
@@ -128,8 +116,6 @@ button {
     justify-content: space-between;
 
     gap: 30px;
-
-    min-width: 0;
 }
 
 .logo {
@@ -168,7 +154,6 @@ button {
     content: "";
 
     position: absolute;
-
     left: 0;
     right: 0;
     bottom: -29px;
@@ -243,7 +228,6 @@ button {
     align-items: center;
 
     position: relative;
-
     overflow: hidden;
 
     background:
@@ -273,21 +257,16 @@ button {
 
 .hero-content {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
     gap: 70px;
-
-    min-width: 0;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
-
-    min-width: 0;
 }
 
 .hero-tag {
@@ -305,11 +284,9 @@ button {
 
 .hero h1 {
     font-size: clamp(48px, 6vw, 82px);
-
     line-height: 0.95;
 
     letter-spacing: -4px;
-
     font-weight: 800;
 }
 
@@ -338,9 +315,7 @@ button {
 
 .hero-buttons {
     display: flex;
-
     gap: 12px;
-
     flex-wrap: wrap;
 }
 
@@ -378,7 +353,6 @@ button {
 
 .btn-secondary {
     border: 1px solid var(--border);
-
     background: var(--card);
 }
 
@@ -400,7 +374,6 @@ button {
     position: relative;
 
     min-width: 0;
-
     width: 100%;
 }
 
@@ -415,11 +388,13 @@ button {
     background: #7c3aed;
 
     filter: blur(130px);
-
     opacity: 0.22;
-
-    pointer-events: none;
 }
+
+
+/* =========================================
+   SETUP CARD
+========================================= */
 
 .setup-card {
     width: 430px;
@@ -433,6 +408,8 @@ button {
         perspective(800px)
         rotateX(8deg)
         rotateY(-8deg);
+
+    transform-origin: center center;
 
     border-radius: 20px;
 
@@ -475,15 +452,8 @@ button {
     width: 230px;
     height: 140px;
 
-    /*
-     * Centralizado dentro do card.
-     * Isso evita que o monitor ultrapasse
-     * a largura do card em telas pequenas.
-     */
-    left: 50%;
+    left: 100px;
     top: 45px;
-
-    transform: translateX(-50%);
 
     padding: 8px;
 
@@ -539,9 +509,7 @@ button {
 
     border: 1px solid #30303a;
 
-    transform:
-        translateX(-50%)
-        skewX(-12deg);
+    transform: translateX(-50%) skewX(-12deg);
 }
 
 .setup-mouse {
@@ -567,7 +535,6 @@ button {
 
 .section-heading {
     display: flex;
-
     align-items: end;
     justify-content: space-between;
 
@@ -629,7 +596,6 @@ button {
     padding: 20px;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
@@ -692,7 +658,6 @@ button {
     overflow: hidden;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
@@ -774,7 +739,6 @@ button {
     height: 34px;
 
     border: 1px solid var(--border);
-
     border-radius: 50%;
 
     background: rgba(10, 10, 14, 0.8);
@@ -788,7 +752,6 @@ button {
 
 .favorite:hover {
     color: #f43f5e;
-
     border-color: rgba(244, 63, 94, 0.4);
 }
 
@@ -890,15 +853,12 @@ button {
     min-height: 300px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     gap: 40px;
 
     position: relative;
-
-    min-width: 0;
 }
 
 .promo h2 {
@@ -907,7 +867,6 @@ button {
     font-size: clamp(32px, 4vw, 48px);
 
     line-height: 1.05;
-
     letter-spacing: -2px;
 }
 
@@ -926,12 +885,9 @@ button {
 
     position: relative;
 
-    flex-shrink: 0;
-
     transform: rotate(-8deg);
 
     border: 1px solid rgba(167, 139, 250, 0.25);
-
     border-radius: 20px;
 
     background:
@@ -1018,12 +974,9 @@ button {
 
 .benefit {
     display: flex;
-
     align-items: center;
 
     gap: 15px;
-
-    min-width: 0;
 }
 
 .benefit-icon {
@@ -1044,7 +997,6 @@ button {
 
 .benefit p {
     color: var(--muted);
-
     font-size: 10px;
 }
 
@@ -1066,8 +1018,6 @@ button {
     justify-content: space-between;
 
     gap: 50px;
-
-    min-width: 0;
 }
 
 .newsletter h2 {
@@ -1092,12 +1042,9 @@ button {
     padding: 5px;
 
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     background: #111117;
-
-    min-width: 0;
 }
 
 .newsletter-form input {
@@ -1127,11 +1074,9 @@ button {
     padding: 0 17px;
 
     border: 0;
-
     border-radius: 7px;
 
     background: var(--white);
-
     color: #08080a;
 
     font-size: 11px;
@@ -1144,7 +1089,6 @@ button {
 
 .newsletter-form button:hover {
     background: var(--purple-light);
-
     color: white;
 }
 
@@ -1190,7 +1134,6 @@ button {
     place-items: center;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     color: var(--muted);
@@ -1203,7 +1146,6 @@ button {
 
 .socials a:hover {
     color: white;
-
     border-color: var(--purple);
 }
 
@@ -1235,7 +1177,6 @@ button {
 
 .footer-bottom {
     display: flex;
-
     justify-content: space-between;
 
     padding: 20px 0;
@@ -1249,7 +1190,7 @@ button {
 
 
 /* =========================================
-   RESPONSIVIDADE PRINCIPAL
+   RESPONSIVIDADE
 ========================================= */
 
 @media (max-width: 1050px) {
@@ -1298,14 +1239,17 @@ button {
     .hero-content {
         grid-template-columns: minmax(0, 1fr);
 
-        text-align: center;
+        align-items: center;
 
-        gap: 40px;
+        gap: 30px;
+
+        text-align: center;
     }
 
     .hero-text,
     .hero-visual {
         min-width: 0;
+        width: 100%;
     }
 
     .hero-text > p {
@@ -1317,51 +1261,45 @@ button {
         justify-content: center;
     }
 
-    /*
-     * CORREÇÃO PRINCIPAL
-     *
-     * O espaço lateral é controlado pelo
-     * próprio hero visual.
-     */
     .hero-visual {
         min-height: 350px;
 
-        width: 100%;
-        min-width: 0;
+        display: grid;
+        place-items: center;
 
-        padding-inline: 16px;
+        overflow: visible;
     }
 
     /*
-     * CARD RESPONSIVO
-     *
-     * Não usamos scale().
-     * A largura real do elemento se adapta
-     * à viewport.
-     */
+       IMPORTANTE:
+       O card continua com 430px de largura.
+       Apenas sua escala visual é reduzida.
+    */
+
     .setup-card {
-        width: min(430px, calc(100vw - 32px));
-
-        max-width: 100%;
-
-        margin-left: auto;
-        margin-right: auto;
+        width: 430px;
+        height: 300px;
 
         transform:
             perspective(800px)
             rotateX(8deg)
-            rotateY(-8deg);
+            rotateY(-8deg)
+            scale(0.78);
+
+        transform-origin: center center;
+
+        margin: 0;
+
+        flex-shrink: 0;
     }
 
     .promo-content {
         flex-direction: column;
-
         text-align: center;
     }
 
     .newsletter-content {
         flex-direction: column;
-
         align-items: stretch;
     }
 
@@ -1390,40 +1328,55 @@ button {
 
 @media (max-width: 550px) {
 
+    .container {
+        width: calc(100% - 32px);
+        max-width: var(--container);
+    }
+
     .section {
         padding: 70px 0;
     }
 
+    .hero {
+        padding: 60px 0;
+    }
+
     .hero h1 {
         font-size: 50px;
-
         letter-spacing: -3px;
     }
 
     .hero-visual {
-        min-height: 260px;
-
         width: 100%;
-        min-width: 0;
+        min-height: 290px;
 
-        padding-inline: 16px;
+        padding: 0 16px;
+
+        display: grid;
+        place-items: center;
     }
 
     /*
-     * Mantém o card centralizado e responsivo.
-     */
+       Tamanho ideal para celulares.
+       O card original continua intacto,
+       mas aparece com aproximadamente 68%.
+    */
+
     .setup-card {
-        width: min(430px, calc(100vw - 32px));
-
-        max-width: 100%;
-
-        margin-left: auto;
-        margin-right: auto;
+        width: 430px;
+        height: 300px;
 
         transform:
             perspective(800px)
             rotateX(8deg)
-            rotateY(-8deg);
+            rotateY(-8deg)
+            scale(0.68);
+
+        transform-origin: center center;
+
+        margin: 0;
+
+        flex-shrink: 0;
     }
 
     .category-grid {
@@ -1457,21 +1410,16 @@ button {
 
     .footer-grid {
         grid-template-columns: 1fr;
-
-        gap: 35px;
     }
 
     .footer-bottom {
         flex-direction: column;
-
         gap: 5px;
     }
 
     .newsletter-form {
         flex-direction: column;
-
         gap: 5px;
-
         padding: 5px;
     }
 
@@ -1504,15 +1452,12 @@ button {
     margin: 10px 0;
 
     font-size: clamp(40px, 5vw, 64px);
-
     line-height: 1;
-
     letter-spacing: -3px;
 }
 
 .page-header p {
     color: var(--muted);
-
     font-size: 14px;
 }
 
@@ -1527,8 +1472,6 @@ button {
     grid-template-columns: 220px 1fr;
 
     gap: 35px;
-
-    min-width: 0;
 }
 
 .filters {
@@ -1537,7 +1480,6 @@ button {
     padding: 22px;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
@@ -1545,7 +1487,6 @@ button {
 
 .filters h3 {
     margin-bottom: 25px;
-
     font-size: 15px;
 }
 
@@ -1557,13 +1498,11 @@ button {
 
 .filter-group h4 {
     margin-bottom: 15px;
-
     font-size: 12px;
 }
 
 .filter-group label {
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -1583,7 +1522,6 @@ button {
 
 .shop-top {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
@@ -1592,7 +1530,6 @@ button {
 
 .shop-top p {
     color: var(--muted);
-
     font-size: 12px;
 }
 
@@ -1600,13 +1537,11 @@ button {
     padding: 10px 13px;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     outline: none;
 
     background: var(--card);
-
     color: white;
 
     font-size: 11px;
@@ -1649,21 +1584,17 @@ button {
     gap: 70px;
 
     align-items: center;
-
-    min-width: 0;
 }
 
 .product-detail-image {
     min-height: 550px;
 
     display: grid;
-
     place-items: center;
 
     position: relative;
 
     border: 1px solid var(--border);
-
     border-radius: 20px;
 
     background:
@@ -1699,7 +1630,6 @@ button {
 
 .product-detail-info .rating span {
     color: var(--muted);
-
     margin-left: 5px;
 }
 
@@ -1717,7 +1647,6 @@ button {
     margin-bottom: 8px;
 
     font-size: 30px;
-
     font-weight: 800;
 }
 
@@ -1727,7 +1656,6 @@ button {
     color: #4ade80;
 
     font-size: 11px;
-
     font-weight: 700;
 }
 
@@ -1735,13 +1663,11 @@ button {
     width: fit-content;
 
     display: flex;
-
     align-items: center;
 
     margin-bottom: 15px;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     overflow: hidden;
@@ -1754,7 +1680,6 @@ button {
     border: 0;
 
     background: var(--card);
-
     color: white;
 
     font-size: 16px;
@@ -1770,7 +1695,6 @@ button {
 
 .add-cart {
     width: 100%;
-
     margin-bottom: 30px;
 }
 
@@ -1818,18 +1742,13 @@ button {
     gap: 30px;
 
     align-items: start;
-
-    min-width: 0;
 }
 
 .cart-items {
     display: flex;
-
     flex-direction: column;
 
     gap: 12px;
-
-    min-width: 0;
 }
 
 .cart-item {
@@ -1846,12 +1765,9 @@ button {
     padding: 15px;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
-
-    min-width: 0;
 }
 
 .cart-product-image {
@@ -1859,7 +1775,6 @@ button {
     height: 90px;
 
     display: grid;
-
     place-items: center;
 
     border-radius: 10px;
@@ -1867,10 +1782,6 @@ button {
     background: #0b0b0f;
 
     font-size: 40px;
-}
-
-.cart-product-info {
-    min-width: 0;
 }
 
 .cart-product-info h3 {
@@ -1893,7 +1804,6 @@ button {
     padding: 25px;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
@@ -1907,7 +1817,6 @@ button {
 
 .cart-summary > div {
     display: flex;
-
     justify-content: space-between;
 
     margin: 14px 0;
@@ -1923,7 +1832,6 @@ button {
 
 .cart-summary hr {
     border: 0;
-
     border-top: 1px solid var(--border);
 }
 
@@ -1968,15 +1876,12 @@ button {
     grid-template-columns: 1fr 1fr;
 
     gap: 80px;
-
-    min-width: 0;
 }
 
 .about-grid h2 {
     font-size: clamp(40px, 5vw, 65px);
 
     line-height: 0.95;
-
     letter-spacing: -3px;
 }
 
@@ -2003,66 +1908,15 @@ button {
     gap: 40px;
 
     align-items: start;
-
-    min-width: 0;
 }
 
-.contact-info {
-    min-width: 0;
-}
-
-.contact-info h2 {
-    margin: 8px 0 15px;
-
-    font-size: 35px;
-}
-
-.contact-info > p {
-    margin-bottom: 35px;
-
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-.contact-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 20px;
-}
-
-.contact-item > span {
-    width: 45px;
-    height: 45px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 10px;
-
-    background: rgba(139, 92, 246, 0.1);
-}
-
-.contact-item strong {
-    display: block;
-
-    font-size: 12px;
-}
-
-.contact-item p {
-    color: var(--muted);
-
-    font-size: 11px;
+.contact-info,
+.contact-form-card {
+    height: fit-content;
 }
 
 .contact-form {
     display: flex;
-
     flex-direction: column;
 
     gap: 8px;
@@ -2070,7 +1924,6 @@ button {
     padding: 30px;
 
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
 
     background: var(--card);
@@ -2080,7 +1933,6 @@ button {
     margin-top: 8px;
 
     font-size: 11px;
-
     font-weight: 600;
 }
 
@@ -2094,11 +1946,9 @@ button {
     outline: none;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     background: #0b0b0f;
-
     color: white;
 
     font-size: 12px;
@@ -2114,35 +1964,21 @@ button {
     border-color: var(--purple);
 }
 
-.contact-form button {
-    margin-top: 15px;
-
-    border: 0;
-}
-
 
 /* =========================================
-   FORMULÁRIO DE CONTATO - CARD
+   FORMULÁRIO DE CONTATO
 ========================================= */
 
 .contact-form-card {
-    height: fit-content;
-
-    margin: 0;
-
-    padding: 25px;
-
     background: var(--card);
 
     border: 1px solid var(--border);
 
     border-radius: 18px;
-}
 
-.contact-form-card .section-label {
-    display: block;
+    padding: 25px;
 
-    margin-bottom: 8px;
+    margin: 0;
 }
 
 .contact-form-card h2 {
@@ -2151,8 +1987,12 @@ button {
 
 .contact-form-card form {
     margin: 0;
-
     padding: 0;
+}
+
+.contact-form-card .section-label {
+    display: block;
+    margin-bottom: 8px;
 }
 
 .form-group {
@@ -2162,7 +2002,7 @@ button {
 
     gap: 8px;
 
-    margin: 0 0 14px;
+    margin: 0 0 14px 0;
 
     padding: 0;
 }
@@ -2174,10 +2014,9 @@ button {
 .form-group label {
     display: block;
 
-    margin: 0 0 6px;
+    margin: 0 0 6px 0;
 
     font-size: 13px;
-
     font-weight: 600;
 
     color: var(--text);
@@ -2254,13 +2093,6 @@ button {
 }
 
 
-/* Remove espaços exagerados da seção */
-
-.contact-grid + * {
-    margin-top: 0;
-}
-
-
 /* =========================================
    LOGIN / CADASTRO
 ========================================= */
@@ -2269,7 +2101,6 @@ button {
     min-height: 100vh;
 
     display: grid;
-
     place-items: center;
 
     padding: 40px 15px;
@@ -2299,13 +2130,11 @@ button {
     padding: 35px;
 
     border: 1px solid var(--border);
-
     border-radius: 18px;
 
     background: rgba(17, 17, 22, 0.9);
 
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
 }
 
 .auth-card h1 {
@@ -2324,7 +2153,6 @@ button {
 
 .auth-card form {
     display: flex;
-
     flex-direction: column;
 
     gap: 8px;
@@ -2334,7 +2162,6 @@ button {
     margin-top: 8px;
 
     font-size: 11px;
-
     font-weight: 600;
 }
 
@@ -2344,11 +2171,9 @@ button {
     outline: none;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     background: #0b0b0f;
-
     color: white;
 
     font-size: 12px;
@@ -2372,7 +2197,6 @@ button {
 
 .auth-options label {
     display: flex;
-
     align-items: center;
 
     gap: 5px;
@@ -2399,7 +2223,6 @@ button {
 
 .auth-divider {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
@@ -2503,7 +2326,7 @@ button {
 
 
 /* =========================================
-   RESPONSIVIDADE DAS NOVAS PÁGINAS
+   RESPONSIVIDADE DAS PÁGINAS INTERNAS
 ========================================= */
 
 @media (max-width: 900px) {
@@ -2536,7 +2359,7 @@ button {
 
 
 /* =========================================
-   CELULAR - NOVAS PÁGINAS
+   CELULAR — PÁGINAS INTERNAS
 ========================================= */
 
 @media (max-width: 600px) {
@@ -2580,17 +2403,29 @@ button {
         font-size: 110px;
     }
 
+    .contact-form-card,
     .contact-form,
     .auth-card {
-        padding: 25px 20px;
+        padding: 20px;
+    }
+
+    .icon-button,
+    .cart-button,
+    .favorite {
+        width: 44px;
+        height: 44px;
+    }
+
+    .quantity button {
+        width: 44px;
+        height: 44px;
     }
 
 }
 
 
 /* =========================================
-   TELAS PEQUENAS
-   480px
+   TELAS MUITO PEQUENAS
 ========================================= */
 
 @media (max-width: 480px) {
@@ -2640,6 +2475,8 @@ button {
     }
 
     .product-detail-info h1 {
+        font-size: 30px;
+
         letter-spacing: -1px;
 
         line-height: 1.1;
@@ -2666,10 +2503,6 @@ button {
         min-height: 120px;
 
         padding: 15px;
-    }
-
-    .product-detail-info h1 {
-        font-size: 30px;
     }
 
     .detail-price {
@@ -2704,88 +2537,73 @@ button {
 
 
 /* =========================================
-   CORREÇÃO FINAL DO HERO NO MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    /*
-     * O container visual ocupa somente a largura
-     * disponível da viewport.
-     */
-    .hero-visual {
-        width: 100%;
-
-        min-width: 0;
-
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    /*
-     * CARD CENTRALIZADO
-     *
-     * Desktop:
-     * 430px
-     *
-     * Celular:
-     * viewport - 32px
-     *
-     * Exemplo:
-     * 360px - 32px = 328px
-     */
-    .setup-card {
-        width: min(
-            430px,
-            calc(100vw - 32px)
-        );
-
-        max-width: 100%;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        /*
-         * Preserva o efeito 3D original.
-         * Não usamos scale().
-         */
-        transform:
-            perspective(800px)
-            rotateX(8deg)
-            rotateY(-8deg);
-    }
-
-}
-
-
-/* =========================================
-   PROTEÇÃO CONTRA OVERFLOW HORIZONTAL
+   GARANTIA CONTRA ROLAGEM HORIZONTAL
 ========================================= */
 
 html,
 body {
     max-width: 100%;
-
     overflow-x: hidden;
 }
 
 
 /* =========================================
-   ÁREA DE TOQUE NO CELULAR
+   CORREÇÃO FINAL DO SETUP NO CELULAR
 ========================================= */
 
-@media (max-width: 600px) {
+/*
+   Esta regra fica por último de propósito.
+   Ela garante que nenhuma regra anterior
+   aumente o card novamente.
+*/
 
-    .icon-button,
-    .cart-button,
-    .favorite {
-        width: 44px;
-        height: 44px;
+@media (max-width: 768px) {
+
+    .hero-visual {
+        width: 100%;
+        min-width: 0;
+
+        display: grid;
+        place-items: center;
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        overflow: visible;
     }
 
-    .quantity button {
-        width: 44px;
-        height: 44px;
+    .setup-card {
+        width: 430px;
+        height: 300px;
+
+        margin: 0;
+
+        flex-shrink: 0;
+
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg)
+            scale(0.68);
+
+        transform-origin: center center;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES MUITO ESTREITOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .setup-card {
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg)
+            scale(0.60);
     }
 
 }
