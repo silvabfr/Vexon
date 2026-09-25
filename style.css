@@ -5,7 +5,11 @@
    Seu setup, seu nível.
 ========================================= */
 
-/* RESET */
+
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +38,17 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
+    max-width: 100%;
+    overflow-x: hidden;
+
     background: var(--bg);
     color: var(--text);
+
     font-family: "Inter", sans-serif;
     line-height: 1.6;
 }
@@ -57,6 +67,11 @@ button {
     cursor: pointer;
 }
 
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .container {
     width: min(92%, var(--container));
     margin: 0 auto;
@@ -65,6 +80,7 @@ button {
 .section {
     padding: 100px 0;
 }
+
 
 /* =========================================
    TOP BAR
@@ -79,12 +95,14 @@ button {
     );
 
     text-align: center;
+
     padding: 9px 15px;
 
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.3px;
 }
+
 
 /* =========================================
    HEADER
@@ -96,6 +114,7 @@ button {
     z-index: 100;
 
     background: rgba(7, 7, 10, 0.88);
+
     backdrop-filter: blur(18px);
 
     border-bottom: 1px solid var(--border);
@@ -109,6 +128,8 @@ button {
     justify-content: space-between;
 
     gap: 30px;
+
+    min-width: 0;
 }
 
 .logo {
@@ -147,6 +168,7 @@ button {
     content: "";
 
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: -29px;
@@ -209,6 +231,7 @@ button {
     font-weight: 800;
 }
 
+
 /* =========================================
    HERO
 ========================================= */
@@ -220,6 +243,7 @@ button {
     align-items: center;
 
     position: relative;
+
     overflow: hidden;
 
     background:
@@ -249,16 +273,21 @@ button {
 
 .hero-content {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
     gap: 70px;
+
+    min-width: 0;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
+
+    min-width: 0;
 }
 
 .hero-tag {
@@ -276,9 +305,11 @@ button {
 
 .hero h1 {
     font-size: clamp(48px, 6vw, 82px);
+
     line-height: 0.95;
 
     letter-spacing: -4px;
+
     font-weight: 800;
 }
 
@@ -307,7 +338,9 @@ button {
 
 .hero-buttons {
     display: flex;
+
     gap: 12px;
+
     flex-wrap: wrap;
 }
 
@@ -345,12 +378,14 @@ button {
 
 .btn-secondary {
     border: 1px solid var(--border);
+
     background: var(--card);
 }
 
 .btn-secondary:hover {
     border-color: rgba(139, 92, 246, 0.5);
 }
+
 
 /* =========================================
    HERO VISUAL
@@ -363,6 +398,10 @@ button {
     place-items: center;
 
     position: relative;
+
+    min-width: 0;
+
+    width: 100%;
 }
 
 .glow {
@@ -376,7 +415,10 @@ button {
     background: #7c3aed;
 
     filter: blur(130px);
+
     opacity: 0.22;
+
+    pointer-events: none;
 }
 
 .setup-card {
@@ -385,7 +427,12 @@ button {
 
     position: relative;
 
-    transform: perspective(800px) rotateX(8deg) rotateY(-8deg);
+    flex-shrink: 0;
+
+    transform:
+        perspective(800px)
+        rotateX(8deg)
+        rotateY(-8deg);
 
     border-radius: 20px;
 
@@ -428,8 +475,15 @@ button {
     width: 230px;
     height: 140px;
 
-    left: 100px;
+    /*
+     * Centralizado dentro do card.
+     * Isso evita que o monitor ultrapasse
+     * a largura do card em telas pequenas.
+     */
+    left: 50%;
     top: 45px;
+
+    transform: translateX(-50%);
 
     padding: 8px;
 
@@ -485,7 +539,9 @@ button {
 
     border: 1px solid #30303a;
 
-    transform: translateX(-50%) skewX(-12deg);
+    transform:
+        translateX(-50%)
+        skewX(-12deg);
 }
 
 .setup-mouse {
@@ -504,12 +560,14 @@ button {
     border: 1px solid #34343e;
 }
 
+
 /* =========================================
    SECTION HEADING
 ========================================= */
 
 .section-heading {
     display: flex;
+
     align-items: end;
     justify-content: space-between;
 
@@ -547,6 +605,7 @@ button {
     color: white;
 }
 
+
 /* =========================================
    CATEGORIES
 ========================================= */
@@ -570,6 +629,7 @@ button {
     padding: 20px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
@@ -611,6 +671,7 @@ button {
     font-size: 11px;
 }
 
+
 /* =========================================
    PRODUCTS
 ========================================= */
@@ -631,6 +692,7 @@ button {
     overflow: hidden;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
@@ -712,6 +774,7 @@ button {
     height: 34px;
 
     border: 1px solid var(--border);
+
     border-radius: 50%;
 
     background: rgba(10, 10, 14, 0.8);
@@ -725,6 +788,7 @@ button {
 
 .favorite:hover {
     color: #f43f5e;
+
     border-color: rgba(244, 63, 94, 0.4);
 }
 
@@ -799,6 +863,7 @@ button {
     background: var(--purple);
 }
 
+
 /* =========================================
    PROMO
 ========================================= */
@@ -825,12 +890,15 @@ button {
     min-height: 300px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
     gap: 40px;
 
     position: relative;
+
+    min-width: 0;
 }
 
 .promo h2 {
@@ -839,6 +907,7 @@ button {
     font-size: clamp(32px, 4vw, 48px);
 
     line-height: 1.05;
+
     letter-spacing: -2px;
 }
 
@@ -857,9 +926,12 @@ button {
 
     position: relative;
 
+    flex-shrink: 0;
+
     transform: rotate(-8deg);
 
     border: 1px solid rgba(167, 139, 250, 0.25);
+
     border-radius: 20px;
 
     background:
@@ -925,6 +997,7 @@ button {
     -webkit-background-clip: text;
 }
 
+
 /* =========================================
    BENEFITS
 ========================================= */
@@ -945,9 +1018,12 @@ button {
 
 .benefit {
     display: flex;
+
     align-items: center;
 
     gap: 15px;
+
+    min-width: 0;
 }
 
 .benefit-icon {
@@ -968,8 +1044,10 @@ button {
 
 .benefit p {
     color: var(--muted);
+
     font-size: 10px;
 }
+
 
 /* =========================================
    NEWSLETTER
@@ -988,6 +1066,8 @@ button {
     justify-content: space-between;
 
     gap: 50px;
+
+    min-width: 0;
 }
 
 .newsletter h2 {
@@ -1012,9 +1092,12 @@ button {
     padding: 5px;
 
     border: 1px solid var(--border);
+
     border-radius: 10px;
 
     background: #111117;
+
+    min-width: 0;
 }
 
 .newsletter-form input {
@@ -1044,9 +1127,11 @@ button {
     padding: 0 17px;
 
     border: 0;
+
     border-radius: 7px;
 
     background: var(--white);
+
     color: #08080a;
 
     font-size: 11px;
@@ -1059,8 +1144,10 @@ button {
 
 .newsletter-form button:hover {
     background: var(--purple-light);
+
     color: white;
 }
+
 
 /* =========================================
    FOOTER
@@ -1103,6 +1190,7 @@ button {
     place-items: center;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     color: var(--muted);
@@ -1115,6 +1203,7 @@ button {
 
 .socials a:hover {
     color: white;
+
     border-color: var(--purple);
 }
 
@@ -1146,6 +1235,7 @@ button {
 
 .footer-bottom {
     display: flex;
+
     justify-content: space-between;
 
     padding: 20px 0;
@@ -1157,8 +1247,9 @@ button {
     font-size: 10px;
 }
 
+
 /* =========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE PRINCIPAL
 ========================================= */
 
 @media (max-width: 1050px) {
@@ -1185,6 +1276,11 @@ button {
 
 }
 
+
+/* =========================================
+   TABLET / CELULAR
+========================================= */
+
 @media (max-width: 800px) {
 
     .header-content {
@@ -1203,6 +1299,8 @@ button {
         grid-template-columns: minmax(0, 1fr);
 
         text-align: center;
+
+        gap: 40px;
     }
 
     .hero-text,
@@ -1219,23 +1317,51 @@ button {
         justify-content: center;
     }
 
+    /*
+     * CORREÇÃO PRINCIPAL
+     *
+     * O espaço lateral é controlado pelo
+     * próprio hero visual.
+     */
     .hero-visual {
         min-height: 350px;
+
         width: 100%;
+        min-width: 0;
+
+        padding-inline: 16px;
     }
 
+    /*
+     * CARD RESPONSIVO
+     *
+     * Não usamos scale().
+     * A largura real do elemento se adapta
+     * à viewport.
+     */
     .setup-card {
-        transform: scale(0.8);
-        margin: 0 auto;
+        width: min(430px, calc(100vw - 32px));
+
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg);
     }
 
     .promo-content {
         flex-direction: column;
+
         text-align: center;
     }
 
     .newsletter-content {
         flex-direction: column;
+
         align-items: stretch;
     }
 
@@ -1257,6 +1383,11 @@ button {
 
 }
 
+
+/* =========================================
+   CELULAR
+========================================= */
+
 @media (max-width: 550px) {
 
     .section {
@@ -1265,16 +1396,34 @@ button {
 
     .hero h1 {
         font-size: 50px;
+
         letter-spacing: -3px;
     }
 
     .hero-visual {
         min-height: 260px;
+
+        width: 100%;
+        min-width: 0;
+
+        padding-inline: 16px;
     }
 
+    /*
+     * Mantém o card centralizado e responsivo.
+     */
     .setup-card {
-        transform: scale(0.6);
-        margin: 0 auto;
+        width: min(430px, calc(100vw - 32px));
+
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg);
     }
 
     .category-grid {
@@ -1308,17 +1457,21 @@ button {
 
     .footer-grid {
         grid-template-columns: 1fr;
+
         gap: 35px;
     }
 
     .footer-bottom {
         flex-direction: column;
+
         gap: 5px;
     }
 
     .newsletter-form {
         flex-direction: column;
+
         gap: 5px;
+
         padding: 5px;
     }
 
@@ -1327,12 +1480,15 @@ button {
     }
 
 }
+
+
 /* =========================================
    PÁGINAS INTERNAS
 ========================================= */
 
 .page-header {
     padding: 100px 0 70px;
+
     background:
         radial-gradient(
             circle at 70% 50%,
@@ -1348,12 +1504,15 @@ button {
     margin: 10px 0;
 
     font-size: clamp(40px, 5vw, 64px);
+
     line-height: 1;
+
     letter-spacing: -3px;
 }
 
 .page-header p {
     color: var(--muted);
+
     font-size: 14px;
 }
 
@@ -1364,8 +1523,12 @@ button {
 
 .shop-layout {
     display: grid;
+
     grid-template-columns: 220px 1fr;
+
     gap: 35px;
+
+    min-width: 0;
 }
 
 .filters {
@@ -1374,6 +1537,7 @@ button {
     padding: 22px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
@@ -1381,6 +1545,7 @@ button {
 
 .filters h3 {
     margin-bottom: 25px;
+
     font-size: 15px;
 }
 
@@ -1392,11 +1557,13 @@ button {
 
 .filter-group h4 {
     margin-bottom: 15px;
+
     font-size: 12px;
 }
 
 .filter-group label {
     display: flex;
+
     align-items: center;
 
     gap: 8px;
@@ -1416,6 +1583,7 @@ button {
 
 .shop-top {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -1424,6 +1592,7 @@ button {
 
 .shop-top p {
     color: var(--muted);
+
     font-size: 12px;
 }
 
@@ -1431,11 +1600,13 @@ button {
     padding: 10px 13px;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     outline: none;
 
     background: var(--card);
+
     color: white;
 
     font-size: 11px;
@@ -1472,22 +1643,27 @@ button {
 
 .product-detail-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     gap: 70px;
 
     align-items: center;
+
+    min-width: 0;
 }
 
 .product-detail-image {
     min-height: 550px;
 
     display: grid;
+
     place-items: center;
 
     position: relative;
 
     border: 1px solid var(--border);
+
     border-radius: 20px;
 
     background:
@@ -1511,7 +1687,9 @@ button {
     margin: 8px 0 10px;
 
     font-size: clamp(36px, 4vw, 54px);
+
     line-height: 1;
+
     letter-spacing: -2px;
 }
 
@@ -1521,6 +1699,7 @@ button {
 
 .product-detail-info .rating span {
     color: var(--muted);
+
     margin-left: 5px;
 }
 
@@ -1538,6 +1717,7 @@ button {
     margin-bottom: 8px;
 
     font-size: 30px;
+
     font-weight: 800;
 }
 
@@ -1547,6 +1727,7 @@ button {
     color: #4ade80;
 
     font-size: 11px;
+
     font-weight: 700;
 }
 
@@ -1554,11 +1735,13 @@ button {
     width: fit-content;
 
     display: flex;
+
     align-items: center;
 
     margin-bottom: 15px;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     overflow: hidden;
@@ -1571,6 +1754,7 @@ button {
     border: 0;
 
     background: var(--card);
+
     color: white;
 
     font-size: 16px;
@@ -1586,11 +1770,13 @@ button {
 
 .add-cart {
     width: 100%;
+
     margin-bottom: 30px;
 }
 
 .product-specs {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     border-top: 1px solid var(--border);
@@ -1611,6 +1797,7 @@ button {
     margin-bottom: 3px;
 
     font-size: 10px;
+
     color: var(--muted);
 }
 
@@ -1631,13 +1818,18 @@ button {
     gap: 30px;
 
     align-items: start;
+
+    min-width: 0;
 }
 
 .cart-items {
     display: flex;
+
     flex-direction: column;
 
     gap: 12px;
+
+    min-width: 0;
 }
 
 .cart-item {
@@ -1654,9 +1846,12 @@ button {
     padding: 15px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
+
+    min-width: 0;
 }
 
 .cart-product-image {
@@ -1664,6 +1859,7 @@ button {
     height: 90px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 10px;
@@ -1671,6 +1867,10 @@ button {
     background: #0b0b0f;
 
     font-size: 40px;
+}
+
+.cart-product-info {
+    min-width: 0;
 }
 
 .cart-product-info h3 {
@@ -1693,6 +1893,7 @@ button {
     padding: 25px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
@@ -1706,6 +1907,7 @@ button {
 
 .cart-summary > div {
     display: flex;
+
     justify-content: space-between;
 
     margin: 14px 0;
@@ -1721,6 +1923,7 @@ button {
 
 .cart-summary hr {
     border: 0;
+
     border-top: 1px solid var(--border);
 }
 
@@ -1765,12 +1968,15 @@ button {
     grid-template-columns: 1fr 1fr;
 
     gap: 80px;
+
+    min-width: 0;
 }
 
 .about-grid h2 {
     font-size: clamp(40px, 5vw, 65px);
 
     line-height: 0.95;
+
     letter-spacing: -3px;
 }
 
@@ -1792,9 +1998,17 @@ button {
 .contact-grid {
     display: grid;
 
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 80px;
+    gap: 40px;
+
+    align-items: start;
+
+    min-width: 0;
+}
+
+.contact-info {
+    min-width: 0;
 }
 
 .contact-info h2 {
@@ -1826,6 +2040,7 @@ button {
     height: 45px;
 
     display: grid;
+
     place-items: center;
 
     border-radius: 10px;
@@ -1847,6 +2062,7 @@ button {
 
 .contact-form {
     display: flex;
+
     flex-direction: column;
 
     gap: 8px;
@@ -1854,6 +2070,7 @@ button {
     padding: 30px;
 
     border: 1px solid var(--border);
+
     border-radius: var(--radius);
 
     background: var(--card);
@@ -1863,6 +2080,7 @@ button {
     margin-top: 8px;
 
     font-size: 11px;
+
     font-weight: 600;
 }
 
@@ -1876,9 +2094,11 @@ button {
     outline: none;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     background: #0b0b0f;
+
     color: white;
 
     font-size: 12px;
@@ -1902,6 +2122,146 @@ button {
 
 
 /* =========================================
+   FORMULÁRIO DE CONTATO - CARD
+========================================= */
+
+.contact-form-card {
+    height: fit-content;
+
+    margin: 0;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+}
+
+.contact-form-card .section-label {
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+.contact-form-card h2 {
+    margin: 0 0 20px;
+}
+
+.contact-form-card form {
+    margin: 0;
+
+    padding: 0;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin: 0 0 14px;
+
+    padding: 0;
+}
+
+.form-group:last-of-type {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin: 0 0 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 14px 16px;
+
+    background: #101014;
+
+    color: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 110px;
+
+    max-height: 180px;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: #101014;
+
+    color: #fff;
+}
+
+.contact-form-card .btn {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+}
+
+
+/* Remove espaços exagerados da seção */
+
+.contact-grid + * {
+    margin-top: 0;
+}
+
+
+/* =========================================
    LOGIN / CADASTRO
 ========================================= */
 
@@ -1909,6 +2269,7 @@ button {
     min-height: 100vh;
 
     display: grid;
+
     place-items: center;
 
     padding: 40px 15px;
@@ -1938,11 +2299,13 @@ button {
     padding: 35px;
 
     border: 1px solid var(--border);
+
     border-radius: 18px;
 
     background: rgba(17, 17, 22, 0.9);
 
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.4);
 }
 
 .auth-card h1 {
@@ -1961,6 +2324,7 @@ button {
 
 .auth-card form {
     display: flex;
+
     flex-direction: column;
 
     gap: 8px;
@@ -1970,6 +2334,7 @@ button {
     margin-top: 8px;
 
     font-size: 11px;
+
     font-weight: 600;
 }
 
@@ -1979,9 +2344,11 @@ button {
     outline: none;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     background: #0b0b0f;
+
     color: white;
 
     font-size: 12px;
@@ -2005,6 +2372,7 @@ button {
 
 .auth-options label {
     display: flex;
+
     align-items: center;
 
     gap: 5px;
@@ -2031,6 +2399,7 @@ button {
 
 .auth-divider {
     display: flex;
+
     align-items: center;
 
     gap: 10px;
@@ -2063,6 +2432,77 @@ button {
 
 
 /* =========================================
+   MENSAGENS / ESTADOS VAZIOS
+========================================= */
+
+.vexon-message {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 99999;
+
+    max-width: 350px;
+
+    padding: 15px 20px;
+
+    border: 1px solid rgba(139, 92, 246, 0.5);
+
+    border-radius: 10px;
+
+    background: #15151b;
+
+    color: white;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.empty-cart,
+.empty-state {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: var(--card);
+}
+
+.empty-cart-icon {
+    font-size: 60px;
+}
+
+.empty-cart p,
+.empty-state p {
+    color: var(--muted);
+
+    margin: 15px 0 25px;
+}
+
+.remove-product {
+    border: 0;
+
+    background: none;
+
+    color: #888;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.favorite.is-active {
+    color: var(--purple-light);
+}
+
+
+/* =========================================
    RESPONSIVIDADE DAS NOVAS PÁGINAS
 ========================================= */
 
@@ -2080,6 +2520,7 @@ button {
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
+
         gap: 40px;
     }
 
@@ -2093,6 +2534,11 @@ button {
 
 }
 
+
+/* =========================================
+   CELULAR - NOVAS PÁGINAS
+========================================= */
+
 @media (max-width: 600px) {
 
     .page-header {
@@ -2105,6 +2551,7 @@ button {
 
     .shop-top {
         align-items: flex-start;
+
         gap: 15px;
     }
 
@@ -2139,307 +2586,11 @@ button {
     }
 
 }
-/* =========================================
-   FORMULÁRIO DE CONTATO
-========================================= */
 
-.contact-form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 35px;
-}
-
-.contact-form-card h2 {
-    margin-bottom: 25px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-
-    background: #101014;
-    color: #fff;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    outline: none;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    transition: 0.2s ease;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #8b5cf6;
-
-    box-shadow:
-        0 0 0 3px rgba(139, 92, 246, 0.12);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.form-group select {
-    cursor: pointer;
-}
-
-.form-group select option {
-    background: #101014;
-    color: #fff;
-}
-
-.contact-form-card .btn {
-    width: 100%;
-    margin-top: 5px;
-}
-    /* =========================================
-   FORMULÁRIO DE CONTATO
-========================================= */
-
-.contact-form-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 35px;
-}
-
-.contact-form-card h2 {
-    margin-bottom: 25px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 14px 16px;
-
-    background: #101014;
-    color: #fff;
-
-    border: 1px solid var(--border);
-    border-radius: 10px;
-
-    outline: none;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    transition: 0.2s ease;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #777;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #8b5cf6;
-
-    box-shadow:
-        0 0 0 3px rgba(139, 92, 246, 0.12);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 140px;
-}
-
-.form-group select {
-    cursor: pointer;
-}
-
-.form-group select option {
-    background: #101014;
-    color: #fff;
-}
-
-.contact-form-card .btn {
-    width: 100%;
-    margin-top: 5px;
-}
-/* =========================================
-   CORREÇÃO - PÁGINA DE CONTATO
-========================================= */
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.contact-info,
-.contact-form-card {
-    height: fit-content;
-}
-
-.contact-form-card {
-    padding: 25px;
-    margin: 0;
-}
-
-.contact-form-card .section-label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.contact-form-card h2 {
-    margin: 0 0 20px 0;
-}
-
-.contact-form-card form {
-    margin: 0;
-    padding: 0;
-}
-
-.form-group {
-    margin: 0 0 14px 0;
-    padding: 0;
-}
-
-.form-group:last-of-type {
-    margin-bottom: 16px;
-}
-
-.form-group label {
-    display: block;
-    margin: 0 0 6px 0;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-}
-
-.form-group textarea {
-    min-height: 110px;
-    max-height: 180px;
-}
-
-.contact-form-card .btn {
-    display: block;
-    width: 100%;
-    margin: 0;
-}
-
-
-/* Remove espaços exagerados da seção */
-
-.contact-grid + * {
-    margin-top: 0;
-}
-
-
-/* Celular */
-
-@media (max-width: 768px) {
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-}
-    
-/* =========================================
-   MENSAGEM / ESTADOS VAZIOS
-========================================= */
-
-.vexon-message {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 99999;
-    max-width: 350px;
-    padding: 15px 20px;
-    border: 1px solid rgba(139, 92, 246, 0.5);
-    border-radius: 10px;
-    background: #15151b;
-    color: white;
-    font-size: 13px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-}
-
-.empty-cart,
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    background: var(--card);
-}
-
-.empty-cart-icon {
-    font-size: 60px;
-}
-
-.empty-cart p,
-.empty-state p {
-    color: var(--muted);
-    margin: 15px 0 25px;
-}
-
-.remove-product {
-    border: 0;
-    background: none;
-    color: #888;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.favorite.is-active {
-    color: var(--purple-light);
-}
 
 /* =========================================
-   RESPONSIVIDADE — AJUSTES FINOS
-   (telas pequenas: ~375px e ~320px)
+   TELAS PEQUENAS
+   480px
 ========================================= */
 
 @media (max-width: 480px) {
@@ -2454,25 +2605,33 @@ button {
 
     .hero h1 {
         font-size: 38px;
+
         line-height: 1.05;
+
         letter-spacing: -1px;
     }
 
     .page-header h1 {
         font-size: 32px;
+
         line-height: 1.1;
+
         letter-spacing: -1px;
     }
 
     .about-grid h2 {
         font-size: 32px;
+
         line-height: 1.1;
+
         letter-spacing: -1px;
     }
 
     .promo h2 {
         font-size: 26px;
+
         line-height: 1.15;
+
         letter-spacing: -1px;
     }
 
@@ -2482,6 +2641,7 @@ button {
 
     .product-detail-info h1 {
         letter-spacing: -1px;
+
         line-height: 1.1;
     }
 
@@ -2491,17 +2651,20 @@ button {
 
     .btn {
         padding: 0 18px;
+
         font-size: 12px;
     }
 
     .category-grid,
     .category-grid-large {
         grid-template-columns: 1fr 1fr;
+
         gap: 10px;
     }
 
     .category-card {
         min-height: 120px;
+
         padding: 15px;
     }
 
@@ -2539,14 +2702,78 @@ button {
 
 }
 
-/* Garante que nada force rolagem horizontal na página inteira */
+
+/* =========================================
+   CORREÇÃO FINAL DO HERO NO MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /*
+     * O container visual ocupa somente a largura
+     * disponível da viewport.
+     */
+    .hero-visual {
+        width: 100%;
+
+        min-width: 0;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /*
+     * CARD CENTRALIZADO
+     *
+     * Desktop:
+     * 430px
+     *
+     * Celular:
+     * viewport - 32px
+     *
+     * Exemplo:
+     * 360px - 32px = 328px
+     */
+    .setup-card {
+        width: min(
+            430px,
+            calc(100vw - 32px)
+        );
+
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        /*
+         * Preserva o efeito 3D original.
+         * Não usamos scale().
+         */
+        transform:
+            perspective(800px)
+            rotateX(8deg)
+            rotateY(-8deg);
+    }
+
+}
+
+
+/* =========================================
+   PROTEÇÃO CONTRA OVERFLOW HORIZONTAL
+========================================= */
+
 html,
 body {
     max-width: 100%;
+
     overflow-x: hidden;
 }
 
-/* Área de toque confortável em botões pequenos no celular */
+
+/* =========================================
+   ÁREA DE TOQUE NO CELULAR
+========================================= */
+
 @media (max-width: 600px) {
 
     .icon-button,
